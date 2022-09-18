@@ -1,0 +1,347 @@
+.home{
+    padding: 2rem 10%;
+    overflow: hidden;;
+}
+
+.button{
+    padding: 1rem 2rem;
+    background-color: #31E1F7;
+    width: fit-content;
+    color: white;
+    border-radius: 1rem;
+    margin-top:2rem;
+    cursor: pointer;
+}
+
+h1{
+    font-weight: 600;
+    font-size: 2.2rem;
+}
+
+/* //////////////////////////// -> Landing  <-  ////////////////////////// */
+.landing{
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+}
+
+.landingContent{
+    padding: 2rem 0;
+    /* width: 30rem; */
+}
+
+.landingContent h1{
+    font-size: 2.8rem;
+    margin-bottom: 0rem;
+    font-weight: 700;
+}
+
+.landingContent h1 span{
+    color: #31E1F7;
+}
+
+.landingContent h3 {
+    font-size: 1.5rem;
+    font-weight: 500;
+}   
+.landingContent p{
+    font-size: 1.1rem;
+}
+.landingLine{
+    background-color: #31E1F7;
+    height: 8px;
+    width: 40%;
+}
+.landingImage{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+}
+.landingImage img{
+    width: 100%;
+}
+
+/* //////////////////////////// -> Partners  <-  ////////////////////////// */
+
+
+.trustedPartners{
+    margin:5rem 0;
+}
+
+.partners{
+    background-color: #D8D8D8;
+    padding: 1rem;
+    border-radius: 1rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.partners img  {
+    height: 150px;
+    margin: 0.5rem;
+}
+
+/* //////////////////////////// -> how it works  <-  ////////////////////////// */
+
+
+.howItWorks{
+    text-align: center;
+    margin:5rem 0;
+    display: flex;
+    flex-direction: column;;
+    align-items: center;
+}
+.howItWorksCardsDiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 2rem 0;
+}
+
+
+/* //////////////////////////// -> Match Making  <-  ////////////////////////// */
+
+
+.️matchmaking{
+    text-align: center;
+    margin:7rem 0;
+}
+.️matchmaking h1{
+    margin-bottom: 4rem;
+}
+.️matchmakingDiv{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;;
+}
+.sideLine{
+    height: 460px;
+    width: 15px;
+    background-color: #31E1F7;
+    margin-right:2rem;
+}
+.matchmakingContent{
+    text-align: left;
+    line-height: 5rem;
+    display: flex;
+    align-items: center;
+    white-space:nowrap;
+}
+.matchmakingContent h1{
+    font-weight: 400;
+    font-size: 2rem;
+}
+.matchmakingImage img{
+    width: 100%;
+}
+
+
+/* //////////////////////////// -> Achievements  <-  ////////////////////////// */
+
+
+.achievementsDiv{
+    background-color: #a8e6ef;
+    display: flex;
+    border-radius: 1rem;
+    justify-content: space-between;
+    padding: 0px 4rem;
+    align-items: center;
+}
+
+.achievementsDiv h3{
+    margin-top: 0;
+    font-weight: 400;
+}
+
+.achievementsDiv h1{
+    margin-bottom: 0;
+    font-weight: 600;
+}
+
+
+
+/* //////////////////////////// -> Find Job  <-  ////////////////////////// */
+
+.findJobs{
+    margin: 7rem 0;
+}
+.findJobsDiv{
+    display: flex;
+    justify-content: space-between;
+}
+.findJobsDiv h1{
+    line-height: 5rem;
+
+}
+.findJobsFirstContent{
+    display: flex;
+}
+.findJobsContent{
+    width: 50%;
+}
+
+.findJobsContent{
+    display: flex;
+    align-items: center;
+}
+.findJobsContent p{
+    font-size: 1.6rem;
+}
+
+/* //////////////////////////// -> Testimonials  <-  ////////////////////////// */
+
+
+.testimonial h1{
+    text-align: center;
+}
+
+.testimonialContents{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* //////////////////////////// -> Questions  <-  ////////////////////////// */
+
+.questions{
+    margin:5rem 0;
+}
+.questions h1{
+    text-align: center;
+}
+
+.questionsContent{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    
+}
+.questionsContent p{
+    width: 360px;
+    margin: 1rem;
+}
+
+
+/* //////////////////////////// -> Sales Story  <-  ////////////////////////// */
+
+.salesStory{
+    margin:7rem 0;
+    background-color: #a8e6ef;
+    border-radius: 1rem;
+    text-align: center;
+    padding: 0.5rem 3rem;
+}
+.salesStoryLogo{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+
+
+@media screen and (max-width: 968px){
+    h1{
+        font-weight: 600;
+        font-size: 1.9rem;
+    }
+    .landing{
+        flex-direction: column-reverse;
+    }
+    .landingContent h1{
+        font-size: 2rem;
+    }
+    .landingContent h3{
+        font-size: 1.5rem;
+    }
+
+    .trustedPartners{
+        margin:2rem 0;
+    }
+
+    .howItWorksCardsDiv{
+        margin-bottom: 0;
+    }
+
+    .️matchmaking h1{
+        margin-bottom: 0.5rem;
+    }
+
+    .️matchmakingDiv{
+        flex-direction: column-reverse;
+    }
+    .matchmakingImage img{
+        width: 80%;
+    }
+    
+    .matchmakingContent h1{
+        font-size: 1.3rem;
+        line-height: 2rem;
+        
+    }
+    .sideLine{
+        height: 200px;
+        width: 0.6rem;
+        margin-right: 1rem;
+    }
+    .achievements{
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .achievements h1{
+        margin-bottom: 2rem;
+    }
+    .achievementsDiv{
+        flex-direction: column;
+        text-align: center;
+        width: fit-content;
+    }
+    .achievementsDiv h1{
+        margin-bottom: 0;
+    }
+    .findJobsDiv{
+        margin: 7rem 0;
+        text-align: center;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 3rem;
+    }
+    .findJobs h1{
+        line-height: 2rem;
+        text-align: center;
+    }
+    .findJobsFirstContent h1{
+        text-align: left;
+        font-weight: 400;
+        font-size: 1.3rem;
+    }
+    .findJobsContent{
+        width: 100%;
+    }
+    .findJobsContent p{
+        font-size: 1rem;
+    }
+    .questions{
+        margin:5rem 0;
+    }
+    .questionsContent{
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+    }
+    .salesStory{
+        margin:2rem 1;
+    }
+    .salesStory h1{
+        margin-bottom: 1rem;
+    }
+    .salesStoryLogo img{
+        width: 100px;
+    }
+}
