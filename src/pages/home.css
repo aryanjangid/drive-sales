@@ -117,7 +117,7 @@ h1{
     align-items: center;;
 }
 .sideLine{
-    height: 460px;
+    height: 500px;
     width: 15px;
     background-color: #31E1F7;
     margin-right:2rem;
@@ -178,17 +178,28 @@ h1{
 .findJobsFirstContent{
     display: flex;
 }
-.findJobsContent{
-    width: 50%;
-}
 
-.findJobsContent{
+.allJobs{
     display: flex;
+    width: 50%;
     align-items: center;
 }
-.findJobsContent p{
+.allJobs p{
     font-size: 1.6rem;
 }
+
+.jobCategoryButton{
+    /* margin:2rem 0; */
+    font-size: 1.5rem;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+
+.jobCategoryButton h3{
+    font-weight: 400;
+}
+
 
 /* //////////////////////////// -> Testimonials  <-  ////////////////////////// */
 
@@ -218,11 +229,21 @@ h1{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    align-items: center;
     
 }
 .questionsContent p{
-    width: 360px;
-    margin: 1rem;
+    width: 340px;
+    margin: 0rem;
+}
+.questionsHeading{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin:0.2rem;
+}
+.addButton{
+    cursor: pointer;
 }
 
 

@@ -1,11 +1,23 @@
-import React from 'react'
+import React, { useState } from 'react'
 import LandingImage from '../images/landing-image.png'
 import Card from '../components/Card.js'
 import Testimonialcard from '../components/TestimonialCard.js'
 import './home.css'
-import { howItWorks, achievements, testimonials, questions, salesStory, partners } from '../data/data'
+import { howItWorks, achievements, testimonials, questions, salesStory, partners, findJobs, jobs } from '../data/data'
 
 const Home = () => {
+
+
+    const [currentJobCategory, setCurrentJobCategory] = useState(findJobs['Business Development'])
+    const [currentJobCategoryButton, setCurrentJobCategoryButton] = useState(0)
+    const [viewQuestion, setViewQuestion] = useState(0)
+    const [currentQuestion, setCurrentQuestion] = useState(0);
+
+    const onClickJobs = (i) => {
+        // console.log(job)
+        // setCurrentJobCategory(findJobs[job]);
+        setCurrentJobCategoryButton(2)
+    }
     return (
         <div className='home'>
             <div className='landing'>
@@ -30,7 +42,7 @@ const Home = () => {
             <div className='trustedPartners'>
                 <h1>Most Trusted Partners</h1>
                 <div className='partners'>
-                    {partners.map((partner,i)=>(
+                    {partners.map((partner, i) => (
                         <img src={partner} alt="trusted  partners"></img>
                     ))}
                 </div>
@@ -71,7 +83,7 @@ const Home = () => {
                 <h1>Recent Achievements</h1>
                 <div className='achievementsDiv'>
                     {achievements.map((m, i) => (
-                        <div>
+                        <div key={i}>
                             <h1>{m.value}</h1>
                             <h3>{m.category}</h3>
                         </div>
@@ -85,21 +97,15 @@ const Home = () => {
                     <div className='findJobsFirstContent'>
                         <div className='sideLine'>
                         </div>
-                        <h1>Business Development<br />
-                            Sales Intern<br />
-                            Sales Consultant<br />
-                            Sales Coach<br />
-                            Sales Trainer<br />
-                        </h1>
+                        <div className='findJobsContents'>
+                            {jobs.map((job, i) => (
+                                <div key={i} style={{ backgroundColor: `${currentJobCategoryButton === i ? '#B7C4CF' : 'white'}`, padding: '0.2rem 1rem' }} className='jobCategoryButton' onClick={() => (setCurrentJobCategoryButton(i), setCurrentJobCategory(findJobs[job]))}><h3>{job}</h3></div>
+                            ))}
+                        </div>
                     </div>
-                    <div className='findJobsContent'>
-                        <p>B2C CRM Client Relationship RFPs PowerPoint
-                            Presentation Design Thinking System Design Corporate Sales
-                            Enterprise Sales SaaS Sales Agile Pitch Outbound Sales
-                            Direct Selling Key Account Management Inside Sales
-                            Email Marketing Sales Engagement Forecasting
-                            Business Intelligence B2B Pre sales Inbound Sales B2C2B
-                            Sales Enablement Channel Sales</p>
+
+                    <div className='allJobs'>
+                        <p>{currentJobCategory}</p>
                     </div>
                 </div>
             </div>
@@ -117,7 +123,13 @@ const Home = () => {
                 <h1>Frequently Asked Questions</h1>
                 <div className='questionsContent'>
                     {questions.map((question, i) => (
-                        <p key={i}>{question}</p>
+                        <div>
+                            <div className='questionsHeading'>
+                                <p key={i}>{question}</p>
+                                <div className='addButton' onClick={() => (setViewQuestion(!viewQuestion), setCurrentQuestion(i))}>{currentQuestion === i ? '-' : '+'}</div>
+                            </div>
+                            <div style={{ display: `${currentQuestion === i ? 'block' : 'none'}` }}>Content</div>
+                        </div   >
                     ))}
                 </div>
             </div>
