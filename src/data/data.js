@@ -38,6 +38,22 @@ export const howItWorks = [
 
 ]
 
+export const matchmakingContent = [
+    "Post Your Sales Role Requirement",
+    "Get Verified Sales Talent Match",
+    "Check Sales Talent Credentials",
+    "Conduct Discussion",
+    "Select Right Match",
+]
+
+export const matchmakingImages = {
+    "Post Your Sales Role Requirement":Landing,
+    "Get Verified Sales Talent Match":Landing,
+    "Check Sales Talent Credentials":Landing,
+    "Conduct Discussion":Landing,
+    "Select Right Match":Landing,
+}
+
 export const achievements = [
     {
         value: "500+",
@@ -95,7 +111,19 @@ export const testimonials = [
         name: "Monika Malik",
         company: "LogicalFire",
         testimonial: "Writing this gives me pleasure to share valuable experience working with The DriveSales. The DriveSales holds good knowledge to make sales work for a company & equipped with well sales strategies. Best part of The DriveSales is to provide flexible timings with my schedule & helped me to understand the business optimization strategies."
-    }
+    },
+    {
+        img: Talent,
+        name: "Monika Malik",
+        company: "LogicalFire",
+        testimonial: "Writing this gives me pleasure to share valuable experience working with The DriveSales. The DriveSales holds good knowledge to make sales work for a company & equipped with well sales strategies. Best part of The DriveSales is to provide flexible timings with my schedule & helped me to understand the business optimization strategies."
+    },
+    {
+        img: Talent,
+        name: "Monika Malik",
+        company: "LogicalFire",
+        testimonial: "Writing this gives me pleasure to share valuable experience working with The DriveSales. The DriveSales holds good knowledge to make sales work for a company & equipped with well sales strategies. Best part of The DriveSales is to provide flexible timings with my schedule & helped me to understand the business optimization strategies."
+    },
 ]
 
 export const questions = [

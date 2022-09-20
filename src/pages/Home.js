@@ -3,15 +3,24 @@ import LandingImage from '../images/landing-image.png'
 import Card from '../components/Card.js'
 import Testimonialcard from '../components/TestimonialCard.js'
 import './home.css'
-import { howItWorks, achievements, testimonials, questions, salesStory, partners, findJobs, jobs } from '../data/data'
+import { Carousel } from 'react-responsive-carousel';
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { howItWorks, achievements, testimonials, questions, salesStory, partners, findJobs, jobs, matchmakingContent, matchmakingImages } from '../data/data'
 
 const Home = () => {
 
 
     const [currentJobCategory, setCurrentJobCategory] = useState(findJobs['Business Development'])
     const [currentJobCategoryButton, setCurrentJobCategoryButton] = useState(0)
+    const [currentMatchCategory, setCurrentMatchCategory] = useState(matchmakingImages['Post Your Sales Role Requirement'])
+    const [currentMatchCategoryButton, setCurrentMatchCategoryButton] = useState(0)
+
     const [viewQuestion, setViewQuestion] = useState(0)
     const [currentQuestion, setCurrentQuestion] = useState(0);
+
+
+
+
 
     const onClickJobs = (i) => {
         // console.log(job)
@@ -65,16 +74,13 @@ const Home = () => {
                         <div className='sideLine'>
                         </div>
                         <div className='matchmakingContent'>
-                            <h1>Post Your Sales Role Requirement<br />
-                                Get Verified Sales Talent Match<br />
-                                Check Sales Talent Credentials<br />
-                                Conduct Discussion<br />
-                                Select Right Match<br />
-                            </h1>
+                            {matchmakingContent.map((m, i) => (
+                                <div key={i} style={{ backgroundColor: `${currentMatchCategoryButton === i ? '#B7C4CF' : 'white'}`, padding: '0rem 1rem' }} className='MatchCategoryButton' onClick={() => (setCurrentMatchCategoryButton(i), setCurrentMatchCategory(matchmakingImages[m]))}><h3>{m}</h3></div>
+                            ))}
                         </div>
                     </div>
                     <div className='matchmakingImage'>
-                        <img src={LandingImage} alt="trusted  partners"></img>
+                        <img src={currentMatchCategory} alt="trusted  partners"></img>
                     </div>
                 </div>
             </div>
@@ -112,10 +118,14 @@ const Home = () => {
 
             <div className='testimonial'>
                 <h1>What Clients Say About Us</h1>
-                <div className='testimonialContents'>
+                <div className='testimonialContent'>
+                <Carousel autoPlay="true" autoFocus="true" axis="horizontal" centerMode="true" centerSlidePercentage="40">
                     {testimonials.map((m, i) => (
-                        <Testimonialcard m={m} key={i} />
+                        <div>
+                            <Testimonialcard m={m} key={i} />
+                        </div>
                     ))}
+                </Carousel>
                 </div>
             </div>
 
@@ -128,7 +138,7 @@ const Home = () => {
                                 <p key={i}>{question}</p>
                                 <div className='addButton' onClick={() => (setViewQuestion(!viewQuestion), setCurrentQuestion(i))}>{currentQuestion === i ? '-' : '+'}</div>
                             </div>
-                            <div style={{ display: `${currentQuestion === i ? 'block' : 'none'}` }}>Content</div>
+                            <div style={{ display: `${currentQuestion === i ? 'block' : 'none'}` }}><h4>Content</h4></div>
                         </div   >
                     ))}
                 </div>
