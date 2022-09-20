@@ -17,8 +17,17 @@ const Home = () => {
 
     const [viewQuestion, setViewQuestion] = useState(0)
     const [currentQuestion, setCurrentQuestion] = useState(0);
-
-
+    const [windowSize, setWindowSize] = useState(window.innerWidth)
+    let value = '40';
+    if(windowSize<1200){
+        value='60'
+    }
+    if(windowSize<900){
+        value='80'
+    }
+    if(windowSize<500){
+        value='160'
+    }
 
 
 
@@ -75,7 +84,7 @@ const Home = () => {
                         </div>
                         <div className='matchmakingContent'>
                             {matchmakingContent.map((m, i) => (
-                                <div key={i} style={{ backgroundColor: `${currentMatchCategoryButton === i ? '#B7C4CF' : 'white'}`, padding: '0rem 1rem' }} className='MatchCategoryButton' onClick={() => (setCurrentMatchCategoryButton(i), setCurrentMatchCategory(matchmakingImages[m]))}><h3>{m}</h3></div>
+                                <div key={i} style={{ backgroundColor: `${currentMatchCategoryButton === i ? '#B7C4CF' : 'white'}`, padding: '0 2%' }} className='MatchCategoryButton' onClick={() => (setCurrentMatchCategoryButton(i), setCurrentMatchCategory(matchmakingImages[m]))}><p>{m}</p></div>
                             ))}
                         </div>
                     </div>
@@ -105,7 +114,7 @@ const Home = () => {
                         </div>
                         <div className='findJobsContents'>
                             {jobs.map((job, i) => (
-                                <div key={i} style={{ backgroundColor: `${currentJobCategoryButton === i ? '#B7C4CF' : 'white'}`, padding: '0.2rem 1rem' }} className='jobCategoryButton' onClick={() => (setCurrentJobCategoryButton(i), setCurrentJobCategory(findJobs[job]))}><h3>{job}</h3></div>
+                                <div key={i} style={{ backgroundColor: `${currentJobCategoryButton === i ? '#B7C4CF' : 'white'}`, padding: '0.7rem 2%' }} className='jobCategoryButton' onClick={() => (setCurrentJobCategoryButton(i), setCurrentJobCategory(findJobs[job]))}><p>{job}</p></div>
                             ))}
                         </div>
                     </div>
@@ -119,13 +128,13 @@ const Home = () => {
             <div className='testimonial'>
                 <h1>What Clients Say About Us</h1>
                 <div className='testimonialContent'>
-                <Carousel autoPlay="true" autoFocus="true" axis="horizontal" centerMode="true" centerSlidePercentage="40">
-                    {testimonials.map((m, i) => (
-                        <div>
-                            <Testimonialcard m={m} key={i} />
-                        </div>
-                    ))}
-                </Carousel>
+                    <Carousel autoPlay="true" autoFocus="true" axis="horizontal" centerMode="true" centerSlidePercentage={value}>
+                        {testimonials.map((m, i) => (
+                            <div>
+                                <Testimonialcard m={m} key={i} />
+                            </div>
+                        ))}
+                    </Carousel>
                 </div>
             </div>
 
@@ -133,10 +142,10 @@ const Home = () => {
                 <h1>Frequently Asked Questions</h1>
                 <div className='questionsContent'>
                     {questions.map((question, i) => (
-                        <div>
+                        <div className='question'>
                             <div className='questionsHeading'>
                                 <p key={i}>{question}</p>
-                                <div className='addButton' onClick={() => (setViewQuestion(!viewQuestion), setCurrentQuestion(i))}>{currentQuestion === i ? '-' : '+'}</div>
+                                <div className='addButton' onClick={() => (setViewQuestion(!viewQuestion), setCurrentQuestion(i))} style={{marginLeft:'1rem'}}><h1>{currentQuestion === i ? '-' : '+'}</h1></div>
                             </div>
                             <div style={{ display: `${currentQuestion === i ? 'block' : 'none'}` }}><h4>Content</h4></div>
                         </div   >

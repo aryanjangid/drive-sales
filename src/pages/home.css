@@ -116,7 +116,7 @@ h1{
     align-items: center;;
 }
 .sideLine{
-    height: 500px;
+    height: 540px;
     width: 15px;
     background-color: #31E1F7;
     margin-right:2rem;
@@ -137,18 +137,17 @@ h1{
     width: 100%;
 }
 .MatchCategoryButton{
-    /* margin:2rem 0; */
+    width:400px;
     font-size: 1.5rem;
     cursor: pointer;
     border-radius: 10px;
-    margin-bottom: 1rem;
 }
 
 
-.MatchCategoryButton h3{
+/* .MatchCategoryButton p{
     font-weight: 400;
     margin: 0;
-}
+} */
 /* //////////////////////////// -> Achievements  <-  ////////////////////////// */
 
 
@@ -200,16 +199,17 @@ h1{
 }
 
 .jobCategoryButton{
-    /* margin:2rem 0; */
+    padding: 1rem 0;
     font-size: 1.5rem;
     cursor: pointer;
     border-radius: 10px;
+    width: 400px;
 }
 
 
-.jobCategoryButton h3{
+/* .jobCategoryButton p{
     font-weight: 400;
-}
+} */
 
 
 /* //////////////////////////// -> Testimonials  <-  ////////////////////////// */
@@ -324,12 +324,16 @@ h1{
         line-height: 2rem;
         display: flex;
     }
-
-    .MatchCategoryButton h3{
-        font-size: 1rem;
+    .MatchCategoryButton{
+        width: 250px;
     }
+    .MatchCategoryButton p{
+        font-size: 1rem;
+        margin: 0;
+    }
+    
     .sideLine{
-        height: 200px;
+        height: 400px;
         width: 0.6rem;
         margin-right: 1rem;
     }
@@ -353,7 +357,7 @@ h1{
     .findJobsDiv{
         margin: 7rem 0;
         text-align: center;
-        flex-direction: column;
+        flex-direction: column-reverse;
         align-items: center;
         margin-top: 3rem;
     }
@@ -366,11 +370,21 @@ h1{
         font-weight: 400;
         font-size: 1.3rem;
     }
-    .findJobsContent{
+    .allJobs{
         width: 100%;
     }
-    .findJobsContent p{
+    .allJobs p{
         font-size: 1rem;
+    }
+    .jobCategoryButton{
+        width: 250px;
+        
+    }
+    .jobCategoryButton p{
+        text-align: left;
+        font-size: 1rem;
+        margin: 0;
+        padding: 1.1rem 0;
     }
     .questions{
         margin:5rem 0;
@@ -379,6 +393,10 @@ h1{
         align-items: center;
         text-align: center;
         justify-content: center;
+    }
+    .question{
+        margin: 1rem;
+        width: 98%;
     }
     .salesStory{
         margin:2rem 1;
