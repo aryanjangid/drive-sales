@@ -5,6 +5,9 @@ import Testimonialcard from '../components/TestimonialCard.js'
 import './home.css'
 import { Carousel } from 'react-responsive-carousel';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
 import { howItWorks, achievements, testimonials, questions, salesStory, partners, findJobs, jobs, matchmakingContent, matchmakingImages } from '../data/data'
 
 const Home = () => {
@@ -17,25 +20,34 @@ const Home = () => {
 
     const [viewQuestion, setViewQuestion] = useState(0)
     const [currentQuestion, setCurrentQuestion] = useState(0);
-    const [windowSize, setWindowSize] = useState(window.innerWidth)
-    let value = '40';
-    if(windowSize<1200){
-        value='60'
-    }
-    if(windowSize<900){
-        value='80'
-    }
-    if(windowSize<500){
-        value='160'
-    }
 
+    const settings = {
+        dots: true,
+        infinite: true,
+        speed: 3000,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        arrows: false,
+        autoplay: true,
+        autoplaySpeed: 1000,
+        responsive: [
+          {
+            breakpoint: 768,
+            settings: {
+              slidesToShow: 2,
+              slidesToScroll: 2,
+            },
+          },
+          {
+            breakpoint: 640,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1,
+            },
+          },
+        ],
+      };
 
-
-    const onClickJobs = (i) => {
-        // console.log(job)
-        // setCurrentJobCategory(findJobs[job]);
-        setCurrentJobCategoryButton(2)
-    }
     return (
         <div className='home'>
             <div className='landing'>
@@ -128,13 +140,13 @@ const Home = () => {
             <div className='testimonial'>
                 <h1>What Clients Say About Us</h1>
                 <div className='testimonialContent'>
-                    <Carousel autoPlay="true" autoFocus="true" axis="horizontal" centerMode="true" centerSlidePercentage={value}>
-                        {testimonials.map((m, i) => (
+                <Slider {...settings}>
+                    {testimonials.map((m, i) => (
                             <div>
                                 <Testimonialcard m={m} key={i} />
                             </div>
                         ))}
-                    </Carousel>
+                    </Slider>
                 </div>
             </div>
 

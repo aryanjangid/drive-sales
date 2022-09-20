@@ -38,13 +38,20 @@
 }
 
 
-@media screen and (max-width: 968px){
+@media screen and (max-width: 1308px){
+.testimonialCard{
+    width: 280px;
+}
     .testimonialCardInfo{
         margin-bottom: 1.5rem;
     }
     .testimonialsName h1{
-        font-size: 1.6rem;
+        font-size: 1.2rem;
         text-align: left;
+    }
+    .testimonialsName h3{
+        font-size: 1rem;
+        text-align: left; 
     }
     .testimonialCardSideLine{
         height: 16rem;
